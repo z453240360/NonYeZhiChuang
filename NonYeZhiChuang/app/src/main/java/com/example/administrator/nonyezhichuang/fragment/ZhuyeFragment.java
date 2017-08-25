@@ -1,5 +1,6 @@
 package com.example.administrator.nonyezhichuang.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.administrator.nonyezhichuang.R;
+import com.example.administrator.nonyezhichuang.activity.ShangPinXiangQingActivity;
 import com.example.administrator.nonyezhichuang.adapter.ZhuYeAdapter;
 import com.example.administrator.nonyezhichuang.adapter.ZhuYe_CuXiaoAdapter;
 import com.example.administrator.nonyezhichuang.adapter.ZhuYe_DongTaiAdapter;
@@ -170,19 +172,19 @@ public class ZhuyeFragment extends Fragment implements IMainView {
     @OnClick({R.id.mBtn_castomlist, R.id.mBtn_buyRecordlist, R.id.mBtn_coupon, R.id.mBtn_buyByPhone, R.id.mBtn_more_bestsell, R.id.mBtn_more_newProdect})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            //常用清单
+            //智能采购
             case R.id.mBtn_castomlist:
                 break;
-            //购买记录
+            //本地供应商
             case R.id.mBtn_buyRecordlist:
                 break;
-            //优惠券
+            //食尚资讯
             case R.id.mBtn_coupon:
                 break;
-            //电话订购
+            //索票索票
             case R.id.mBtn_buyByPhone:
                 break;
-            //更多--畅销品
+            //Plus会员
             case R.id.mBtn_more_bestsell:
                 break;
             //新品推荐--更多
@@ -259,6 +261,10 @@ public class ZhuyeFragment extends Fragment implements IMainView {
         adapter_dongtai.notifyDataSetChanged();
     }
 
+    /**
+     * 首页促销商品列表
+     * @param s
+     */
     @Override
     public void getUpDate(String s) {
         Log.i(TAG, "getUpDate: " + s);
@@ -273,6 +279,19 @@ public class ZhuyeFragment extends Fragment implements IMainView {
         mRecyclerViewPresell.setAdapter(cuXiaoAdapter);
         gridLayoutManager = new GridLayoutManager(getActivity(), 2, GridLayout.VERTICAL, false);
         mRecyclerViewPresell.setLayoutManager(gridLayoutManager);
+        cuXiaoAdapter.setOnItemClickListener(new ZhuYe_DongTaiAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int pos, View view) {
+                /**
+                 * 点击促销商品，跳转到商品详情页面
+                 */
+                ZhuYe_CuXiaoBean.DataBeanX.DataBean dataBean = cuXiaoList.get(pos);
+                int goods_id = dataBean.getGoods_id();
+                Intent intent = new Intent(getActivity(), ShangPinXiangQingActivity.class);
+                intent.putExtra("goods_id",goods_id+"");
+                startActivity(intent);
+            }
+        });
 
     }
 

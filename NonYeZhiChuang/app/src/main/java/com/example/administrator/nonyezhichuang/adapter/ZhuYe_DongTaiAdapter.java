@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Administrator on 2017/8/18.
  */
 
-public class ZhuYe_DongTaiAdapter extends RecyclerView.Adapter<ZhuYe_DongTaiAdapter.MyHolder>{
+public class ZhuYe_DongTaiAdapter extends RecyclerView.Adapter<ZhuYe_DongTaiAdapter.MyHolder> {
     private List<ZuiXinDongTaiBean.DataBeanX.DataBean> mDatas = new ArrayList<>();
     private Context mContext;
     private LayoutInflater mInflater;
@@ -41,7 +41,16 @@ public class ZhuYe_DongTaiAdapter extends RecyclerView.Adapter<ZhuYe_DongTaiAdap
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
+    public void onBindViewHolder(final MyHolder holder, final int position) {
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener != null) {
+                    mListener.onItemClick(position, holder.itemView);
+                }
+            }
+        });
 
         ZuiXinDongTaiBean.DataBeanX.DataBean dataBean = mDatas.get(position);
         //获取图片地址
@@ -55,7 +64,7 @@ public class ZhuYe_DongTaiAdapter extends RecyclerView.Adapter<ZhuYe_DongTaiAdap
 
         holder.title.setText(dataBean.getArticle_title());//标题
         holder.time.setText(dataBean.getArticle_time());//日期
-        holder.seeNumber.setText(dataBean.getArticle_see_num()+" 人看过");//查看人数
+        holder.seeNumber.setText(dataBean.getArticle_see_num() + " 人看过");//查看人数
     }
 
     @Override
@@ -63,10 +72,11 @@ public class ZhuYe_DongTaiAdapter extends RecyclerView.Adapter<ZhuYe_DongTaiAdap
         return mDatas == null ? 0 : mDatas.size();
     }
 
-    public class MyHolder extends XRecyclerView.ViewHolder{
+    public class MyHolder extends XRecyclerView.ViewHolder {
 
         ImageView mImg;
-        TextView title,time,seeNumber;
+        TextView title, time, seeNumber;
+
         public MyHolder(View itemView) {
             super(itemView);
             mImg = (ImageView) itemView.findViewById(R.id.iv_show);
@@ -78,7 +88,6 @@ public class ZhuYe_DongTaiAdapter extends RecyclerView.Adapter<ZhuYe_DongTaiAdap
 
     /**
      * 点击事件的接口回调
-     *
      */
 
     public interface OnItemClickListener {

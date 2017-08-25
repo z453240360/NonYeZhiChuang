@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbars_shangpinxiangqing_activity"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:background="#8b8b8b"
+        android:popupTheme="@style/AppTheme">
+
+        <RadioGroup
+            android:background="#ffffff"
+            android:id="@+id/mRg_shangpinxiangqing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:textColor="@drawable/radiobutton"
+                android:id="@+id/mRb_xiangqing_shangpin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:tag="0"
+                android:text="商品"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:textColor="@drawable/radiobutton"
+                android:id="@+id/mRb_xiangqing"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="0dp"
+                android:gravity="center"
+                android:tag="1"
+                android:text="详情"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:textColor="@drawable/radiobutton"
+                android:id="@+id/mRb_pingjia"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="0dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:gravity="center"
+                android:tag="2"
+                android:text="评价"
+                android:textSize="12sp" />
+        </RadioGroup>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/ll_xiangqing"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/mBtn_kefu"
+            android:text="客服"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/mBtn_dianbu"
+            android:text="店铺"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/mBtn_shoucang"
+            android:text="收藏"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/mBtn_heji"
+            android:text="合计"
+            android:layout_weight="3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/sc_xiangqing"
+        android:layout_below="@id/toolbars_shangpinxiangqing_activity"
+        android:layout_above="@id/ll_xiangqing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/mImg_xiangqing"
+                android:scaleType="fitXY"
+                android:src="@mipmap/home_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_below="@id/mImg_xiangqing"
+                android:text="上海青"
+                android:id="@+id/mTxt_title_xiangqing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/mTxt_title_xiangqing"
+                android:text="描述： "
+                android:id="@+id/mTxt_miaoshu_xiangqing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/mTxt_title_xiangqing"
+                android:text="商品详细信息"
+                android:layout_toRightOf="@id/mTxt_miaoshu_xiangqing"
+                android:id="@+id/mTxt_xinxi_xiangqing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/mTxt_miaoshu_xiangqing"
+                android:text="请选取商品规格"
+                android:id="@+id/mTxt_xinxi_guige"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/mTxt_xinxi_guige"
+                android:text="3.5"
+                android:id="@+id/mTxt_jiaqian_xiangqing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/mTxt_xinxi_guige"
+                android:text="商品详细信息"
+                android:layout_toRightOf="@id/mTxt_jiaqian_xiangqing"
+                android:id="@+id/mTxt_danwei_xiangqing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_toRightOf="@id/mTxt_danwei_xiangqing"
+                android:text="减"
+                android:background="@null"
+                android:id="@+id/mBtn_jian_xiangqing"
+                android:layout_alignTop="@id/mTxt_danwei_xiangqing"
+                android:layout_alignBottom="@id/mTxt_danwei_xiangqing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_toRightOf="@id/mBtn_jian_xiangqing"
+                android:text="0"
+                android:id="@+id/mTxt_shuliang_xiangqing"
+                android:layout_alignTop="@id/mTxt_danwei_xiangqing"
+                android:layout_alignBottom="@id/mTxt_danwei_xiangqing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <Button
+                android:background="@null"
+                android:id="@+id/mBtn_jia_xiangqing"
+                android:layout_toRightOf="@id/mTxt_shuliang_xiangqing"
+                android:text="加"
+                android:layout_alignTop="@id/mTxt_danwei_xiangqing"
+                android:layout_alignBottom="@id/mTxt_danwei_xiangqing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+
+            <TextView
+                android:layout_below="@id/mTxt_jiaqian_xiangqing"
+                android:id="@+id/mTxt_pingjia_xiangqing"
+                android:text="评价"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_below="@id/mTxt_jiaqian_xiangqing"
+                android:layout_toRightOf="@id/mTxt_pingjia_xiangqing"
+                android:id="@+id/mTxt_number_xiangqing"
+                android:text="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <com.jcodecraeer.xrecyclerview.XRecyclerView
+                android:layout_below="@id/mTxt_number_xiangqing"
+                android:id="@+id/rc_pingjia_xiangqing"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -11,6 +11,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -56,6 +57,12 @@ public interface IService {
                                    @Query("classId")String classId);
 
 
+    //---------------------------------------------------------------------------
+    //GET请求    商品
+    //------------------------------------------------------
 
+    //商品--商品详情
+    @GET(Constant.product_message)
+    Call<ResponseBody> product_message(@Path("id") String id);
 
 }

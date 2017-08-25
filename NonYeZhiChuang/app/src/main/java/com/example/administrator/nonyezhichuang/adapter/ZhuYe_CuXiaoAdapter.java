@@ -41,7 +41,16 @@ public class ZhuYe_CuXiaoAdapter extends RecyclerView.Adapter<ZhuYe_CuXiaoAdapte
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
+    public void onBindViewHolder(final MyHolder holder, final int position) {
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener!=null){
+                    mListener.onItemClick(position,holder.itemView);
+                }
+            }
+        });
 
         ZhuYe_CuXiaoBean.DataBeanX.DataBean dataRecommendBean = mDatas.get(position);
         //获取图片地址

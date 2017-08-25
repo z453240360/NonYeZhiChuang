@@ -200,5 +200,34 @@ public class DateModel {
 
     }
 
+
+
+
+    //商品--商品详情
+    public void product_message(String classId,final ICallBack callBack){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Constant.BASRURL)
+                .build();
+        IService service = retrofit.create(IService.class);
+
+        Call<ResponseBody> regiest = service.product_message(classId);
+        regiest.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    callBack.succesed(response.body().string());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBack.failed("网络请求失败"+t.toString());
+            }
+        });
+
+    }
+
 }
 

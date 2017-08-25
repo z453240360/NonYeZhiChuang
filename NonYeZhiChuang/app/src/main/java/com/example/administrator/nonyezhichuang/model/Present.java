@@ -164,4 +164,28 @@ public class Present {
         });
     }
 
+    //商品--商品详情
+    public void product_message(String id){
+        iMainView.showLoading();
+        dateModel.product_message(id,new ICallBack() {
+            @Override
+            public void succesed(String s) {
+                iMainView.getUpDate(s);
+                iMainView.cancelLoading();
+            }
+
+            @Override
+            public void failed(String s) {
+                iMainView.showFaliure(s);
+                iMainView.cancelLoading();
+            }
+
+            @Override
+            public void netState(String s) {
+                iMainView.showFaliure(s);
+                iMainView.cancelLoading();
+            }
+        });
+    }
+
 }

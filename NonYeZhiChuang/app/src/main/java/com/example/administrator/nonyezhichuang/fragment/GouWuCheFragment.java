@@ -42,38 +42,46 @@ public class GouWuCheFragment extends Fragment implements IMainView {
     private String TAG = "dd";
     private List<String> mDatas;
 
+    /**
+     * 创建视图
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View inflate = inflater.inflate(R.layout.fragment_gouwuche, container, false);
         unbinder = ButterKnife.bind(this, inflate);
         return inflate;
     }
 
+    /**
+     * 初始化操作
+     * @param view
+     * @param savedInstanceState
+     */
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         present = new Present(this);
-        present.getCar();
-
+        present.getCar();//获取购物车，不过窈先登陆
 
         mDatas = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
             mDatas.add("lll"+i);
         }
 
+        //购物车列表
         GouWuCheAdapter adapter = new GouWuCheAdapter(mDatas,getActivity());
-
         gouWuChe.setAdapter(adapter);
-
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
-
         gouWuChe.setLayoutManager(manager);
 
     }
 
+    //网络请求购物车信息，如果code为300,跳转到登陆页面
     @Override
     public void getCode(String s) {
         Log.i(TAG, "getCode: " + s);

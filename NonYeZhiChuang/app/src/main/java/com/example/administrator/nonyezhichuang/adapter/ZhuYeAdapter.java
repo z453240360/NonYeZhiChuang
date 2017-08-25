@@ -45,8 +45,16 @@ public class ZhuYeAdapter extends RecyclerView.Adapter<ZhuYeAdapter.MyHolder>{
     }
 
     @Override
-    public void onBindViewHolder(MyHolder holder, int position) {
+    public void onBindViewHolder(final MyHolder holder, final int position) {
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener!=null){
+                    mListener.onItemClick(position,holder.itemView);
+                }
+            }
+        });
         ShouYe_BannerBean.DataBean.DataRecommendBean dataRecommendBean = mDatas.get(position);
         //获取图片地址
         String goods_cover = dataRecommendBean.getGoods_cover();
@@ -78,6 +86,21 @@ public class ZhuYeAdapter extends RecyclerView.Adapter<ZhuYeAdapter.MyHolder>{
             danwei = (TextView) itemView.findViewById(R.id.mTxt_danwei);
             danwei2 = (TextView) itemView.findViewById(R.id.mTxt_danwei2);
         }
+    }
+
+    /**
+     * 点击事件的接口回调
+     *
+     */
+
+    public interface OnItemClickListener {
+        void onItemClick(int pos, View view);
+    }
+
+    private ZhuYe_DongTaiAdapter.OnItemClickListener mListener;
+
+    public void setOnItemClickListener(ZhuYe_DongTaiAdapter.OnItemClickListener listener) {
+        this.mListener = listener;
     }
 
 }
