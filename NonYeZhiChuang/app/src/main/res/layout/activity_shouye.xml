@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shouye"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.nonyezhichuang.activity.ShouyeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbars_shouye_activity"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:background="#00ffffff"
+        android:popupTheme="@style/AppTheme">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:id="@+id/mTxt_xiangqing_Activity"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="客服"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/xiaoxi"
+                android:layout_alignParentRight="true"
+                android:text="消息"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/sousuo"
+                android:text="搜索"
+                android:background="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toRightOf="@id/mTxt_xiangqing_Activity"
+                android:layout_toLeftOf="@id/xiaoxi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <RadioGroup
+        android:background="#ffffff"
+        android:id="@+id/mRg_shouye"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:textColor="@drawable/radiobutton"
+            android:id="@+id/mRb_shouye"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:tag="0"
+            android:drawableTop="@drawable/radiodrawable_zhuye"
+            android:text="主页"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:textColor="@drawable/radiobutton"
+            android:id="@+id/mRb_shangpin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/radiodrawable_shangpin"
+            android:drawablePadding="0dp"
+            android:gravity="center"
+            android:tag="1"
+            android:text="商品"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:textColor="@drawable/radiobutton"
+            android:id="@+id/mRb_gouwuche"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="0dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:gravity="center"
+            android:tag="2"
+            android:drawableTop="@drawable/radiodrawable_gouwuche"
+            android:text="购物车"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:textColor="@drawable/radiobutton"
+            android:id="@+id/mRb_wode"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/radiodrawable_wode"
+            android:button="@null"
+            android:drawablePadding="0dp"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:gravity="center"
+            android:tag="3"
+            android:text="我的"
+            android:textSize="12sp" />
+    </RadioGroup>
+    <TextView
+        android:layout_above="@id/mRg_shouye"
+        android:id="@+id/txt"
+        android:background="#808a8a8a"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <FrameLayout
+        android:id="@+id/frame_shouye"
+        android:layout_below="@id/toolbars_shouye_activity"
+        android:layout_above="@id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.nonyezhichuang.activity.LoginActivity">
+
+    <EditText
+        android:id="@+id/mEd_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入手机号" />
+
+    <EditText
+        android:layout_below="@id/mEd_login"
+        android:id="@+id/mEd_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码" />
+
+    <Button
+        android:layout_below="@id/mEd_password"
+        android:id="@+id/mBtn_forgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="忘记密码" />
+
+    <Button
+        android:layout_below="@id/mBtn_forgetPassword"
+        android:id="@+id/mBtn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登陆" />
+
+    <Button
+        android:layout_below="@id/mBtn_login"
+        android:id="@+id/mBtn_regiest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="注册" />
+
+
+</RelativeLayout>

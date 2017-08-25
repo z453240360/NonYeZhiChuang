@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.administrator.nonyezhichuang.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="你好？？？？"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.Toolbar>
+
+
+
+
+
+
+    <com.example.administrator.nonyezhichuang.wedget.MyScrollView
+        android:id="@+id/sc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/txt"
+        android:text="你好"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/activity_main1"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登陆" />
+    <Button
+        android:id="@+id/activity_main2"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手机注册" />
+    <Button
+        android:id="@+id/activity_main3"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="找回密码" />
+    <Button
+        android:id="@+id/activity_main4"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="找回密码，发送验证码" />
+    <Button
+        android:id="@+id/activity_main5"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main6"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main7"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+
+    <Button
+        android:id="@+id/activity_main8"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main9"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main10"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main11"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main12"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main13"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+    <Button
+        android:id="@+id/activity_main14"
+        android:onClick="onViewClicked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+    </LinearLayout>
+
+    </com.example.administrator.nonyezhichuang.wedget.MyScrollView>
+</LinearLayout>

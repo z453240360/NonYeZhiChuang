@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner_total"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/ll_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/banner_total"
+            android:orientation="horizontal">
+
+            <Button
+                android:background="@null"
+                android:id="@+id/mBtn_castomlist"
+                android:layout_width="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="13dp"
+                android:drawableTop="@mipmap/home_zhinengcaigou"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="智能采购" />
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="13dp"
+                android:background="@null"
+                android:drawableTop="@mipmap/home_bendigongyingshang"
+                android:id="@+id/mBtn_buyRecordlist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="本地供应商" />
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="13dp"
+                android:background="@null"
+                android:drawableTop="@mipmap/home_shishangzixun"
+                android:id="@+id/mBtn_coupon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="食尚咨询" />
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="13dp"
+                android:background="@null"
+                android:drawableTop="@mipmap/home_suozhengsuopiao"
+                android:id="@+id/mBtn_buyByPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="索证索票" />
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="13dp"
+                android:background="@null"
+                android:drawableTop="@mipmap/home_huiyuan"
+                android:id="@+id/mBtn_plushuiyuan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="PLUS会员" />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/ll_total"
+            android:id="@+id/rl_zhengfu"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/img_zhengfugonggao"
+                android:src="@mipmap/home_zhengfugonggao"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
+            <TextView
+                android:layout_toRightOf="@id/img_zhengfugonggao"
+                android:text="政府公告"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_alignTop="@id/img_zhengfugonggao"
+                android:layout_alignBottom="@id/img_zhengfugonggao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_imgs"
+            android:layout_below="@id/rl_zhengfu"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/img_tuijianyoujiang"
+                android:src="@mipmap/home_tuijianyouli"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="180dp" />
+
+            <LinearLayout
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:id="@+id/meiweixinpin"
+                    android:layout_marginBottom="5dp"
+                    android:src="@mipmap/home_meiweixinpin"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp" />
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:layout_below="@id/meiweixinpin"
+                    android:src="@mipmap/home_jinpairexiao"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="0dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/xinpin"
+            android:layout_centerHorizontal="true"
+            android:drawableTop="@mipmap/home_xinpin"
+            android:text="新鲜上市，天天换新"
+            android:drawablePadding="5dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_imgs"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/banner_total2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/xinpin" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/presell"
+            android:layout_centerHorizontal="true"
+            android:drawableTop="@mipmap/home_tehui"
+            android:drawablePadding="5dp"
+            android:text="前所未有，大力折扣"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/banner_total2"
+             />
+
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginLeft="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/mRecyclerView_presell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/presell" />
+
+        <TextView
+            android:id="@+id/bestsell"
+            android:layout_centerHorizontal="true"
+            android:drawableTop="@mipmap/home_xinwen"
+            android:text="实时更新，最新咨询"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mRecyclerView_presell"
+            />
+
+        <Button
+            android:layout_alignTop="@id/bestsell"
+            android:id="@+id/mBtn_more_bestsell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@id/mRecyclerView_presell"
+            android:layout_toRightOf="@id/bestsell"
+            android:text="更多" />
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/mRecyclerView_bestsell"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_below="@id/bestsell" />
+
+        <TextView
+            android:id="@+id/newProdect"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mRecyclerView_bestsell"
+            android:text="新品推荐" />
+
+        <Button
+            android:visibility="gone"
+            android:layout_alignTop="@id/newProdect"
+            android:layout_alignBottom="@id/newProdect"
+            android:id="@+id/mBtn_more_newProdect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mRecyclerView_presell"
+            android:layout_toRightOf="@id/newProdect"
+            android:text="更多" />
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:visibility="gone"
+            android:id="@+id/mRecyclerView_newProdect"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/newProdect" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/specailSale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mRecyclerView_newProdect"
+            android:text="特卖" />
+
+
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:visibility="gone"
+            android:id="@+id/mRecyclerView_specailSale"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/specailSale" />
+
+    </RelativeLayout>
+</ScrollView>

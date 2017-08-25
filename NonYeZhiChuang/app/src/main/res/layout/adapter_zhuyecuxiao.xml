@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_marginBottom="10dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/mImg_zhuye"
+        android:layout_width="165dp"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/mTxt_name"
+        android:text="排骨动画"
+        android:textSize="18sp"
+        android:layout_below="@id/mImg_zhuye"
+        android:layout_width="165dp"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:text="18kuan一斤"
+        android:textColor="#EF6223"
+        android:layout_below="@id/mTxt_name"
+        android:id="@+id/mTxt_danwei"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+    <TextView
+        android:layout_marginTop="5dp"
+        android:text="18一斤"
+        android:textSize="14sp"
+        android:layout_toRightOf="@id/mTxt_danwei"
+        android:layout_below="@id/mTxt_name"
+        android:id="@+id/mTxt_danwei2"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp" />
+
+</RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center_vertical"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/mImg_gouwuche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher" />
+
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/mBtn_jia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="加"
+        />
+
+    <TextView
+        android:gravity="center_vertical"
+        android:id="@+id/mTxt_shuliang"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="16sp" />
+
+    <Button
+        android:gravity="center_vertical"
+        android:id="@+id/mBtn_jian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="减"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.nonyezhichuang.activity.RegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册" />
+
+        <EditText
+            android:layout_below="@id/title"
+            android:id="@+id/mEd_phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入手机号" />
+
+        <EditText
+            android:layout_below="@id/mEd_phoneNumber"
+            android:id="@+id/mEd_phoneCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="请输入验证码" />
+
+        <Button
+            android:layout_below="@id/mEd_phoneNumber"
+            android:layout_toRightOf="@id/mEd_phoneCode"
+            android:id="@+id/mBtn_getPhoneCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取验证码" />
+
+        <EditText
+            android:layout_below="@id/mEd_phoneCode"
+            android:id="@+id/mEd_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入密码" />
+
+
+        <EditText
+            android:layout_below="@id/mEd_password"
+            android:id="@+id/mEd_passwordAgain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请再次输入密码" />
+
+        <TextView
+            android:layout_below="@id/mEd_passwordAgain"
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+
+        <TextView
+            android:layout_below="@id/line1"
+            android:id="@+id/componey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="企业认证" />
+
+        <EditText
+            android:layout_below="@id/componey"
+            android:id="@+id/mEd_componeyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入企业名称" />
+
+        <EditText
+            android:layout_below="@id/mEd_componeyName"
+            android:id="@+id/mEd_componeyAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="所在详细地址" />
+
+        <EditText
+            android:layout_below="@id/mEd_componeyAddress"
+            android:id="@+id/mEd_phoneMethed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="联系方式" />
+
+        <TextView
+            android:id="@+id/aptitude"
+            android:layout_below="@id/mEd_phoneMethed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="相关资质" />
+
+        <Button
+            android:layout_below="@id/aptitude"
+            android:id="@+id/mBtn_uploding1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传" />
+
+
+        <Button
+            android:layout_below="@id/aptitude"
+            android:layout_toRightOf="@id/mBtn_uploding1"
+            android:id="@+id/mBtn_uploding2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传" />
+
+        <Button
+            android:layout_below="@id/mBtn_uploding1"
+            android:id="@+id/mBtn_sureRegiest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册" />
+    </RelativeLayout>
+</ScrollView>
