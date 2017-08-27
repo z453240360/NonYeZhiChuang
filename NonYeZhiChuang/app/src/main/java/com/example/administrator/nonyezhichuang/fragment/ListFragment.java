@@ -38,6 +38,7 @@ public class ListFragment extends Fragment {
 
     private ArrayList<String> list = new ArrayList<>();
     private ArrayAdapter<String> myadapter;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,13 +64,30 @@ public class ListFragment extends Fragment {
 
     @Subscribe
     public void onEvent(ShangPinListBean bean){
-
         String dianshi = bean.getDianshi();
 
+    }
+
+    private String data;
+    public void setData (String data) {
+        this.data=data;
+
+//        list.clear();
         for (int i = 0; i < 50; i++) {
-            list.add(""+i+dianshi);
+            list.add(""+i+data);
+        }
+        Log.i("dd", "setData: "+data);
+
+
+        if (myadapter!=null){
+            myadapter.notifyDataSetChanged();
         }
 
-
     }
+    public String  getdata()
+    {
+        return data;
+    }
+
+
 }

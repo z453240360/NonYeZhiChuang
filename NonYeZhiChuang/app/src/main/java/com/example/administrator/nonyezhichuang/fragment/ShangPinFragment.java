@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,21 +45,9 @@ public class ShangPinFragment extends Fragment {
     FrameLayout frame;
     private Fragment lastFragment;
     private ArrayList<String> list = new ArrayList<String>();
-    private ArrayList<Fragment> fragments = new ArrayList<>();
+    private ArrayList<ListFragment> fragments = new ArrayList<>();
     private FragmentManager manager;
 
-    private List<Fragment> getFragments()
-    {
-        List<Fragment> fragments = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++) {
-            ListFragment myFragment = new ListFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("index", list.get(i));
-            myFragment.setArguments(bundle);
-            fragments.add(myFragment);
-        }
-        return fragments;
-    }
 
 
     @Nullable
@@ -73,6 +62,9 @@ public class ShangPinFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
+
         list.add("电音");
         list.add("电视");
         list.add("影视");
@@ -85,9 +77,11 @@ public class ShangPinFragment extends Fragment {
 
         for (int i = 0; i < list.size(); i++) {
             ListFragment myFragment = new ListFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("index",list.get(i));
 
+
+
+            myFragment.setData(list.get(i));
+            fragments.add(myFragment);
 //            EventBus.getDefault().post(i);
 
             fragments.add(myFragment);
@@ -102,16 +96,22 @@ public class ShangPinFragment extends Fragment {
         tablayout.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabView tab, int position) {
+                manager = getChildFragmentManager();
+                ListFragment listFragment= fragments.get(position);
+                manager.beginTransaction().hide(lastFragment).commit();
+                manager = getChildFragmentManager();
+                listFragment.setData(list.get(position));
 
-                if (fragments.get(position).isAdded()) {
-                    manager.beginTransaction().show(fragments.get(position)).commit();
+                if (listFragment.isAdded()) {
 
+                    manager.beginTransaction().show(listFragment).commit();
                 } else {
-                    manager.beginTransaction().add(R.id.frame, fragments.get(position)).commit();
+
+                    manager.beginTransaction().add(R.id.frame, listFragment).commit();
                 }
 
-                manager.beginTransaction().hide(lastFragment).commit();
-                lastFragment = fragments.get(position);
+                lastFragment = listFragment;
+                Log.i("dd",listFragment.getdata()+"||"+position);
             }
 
             @Override
@@ -188,6 +188,7 @@ public class ShangPinFragment extends Fragment {
 //                return 0;
 //            }
 //        });
+
 
 
     }
