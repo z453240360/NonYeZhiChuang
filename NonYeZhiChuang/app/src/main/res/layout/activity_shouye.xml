@@ -4,6 +4,7 @@
     android:id="@+id/activity_shouye"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00ffffff"
     tools:context="com.example.administrator.nonyezhichuang.activity.ShouyeActivity">
 
     <android.support.v7.widget.Toolbar

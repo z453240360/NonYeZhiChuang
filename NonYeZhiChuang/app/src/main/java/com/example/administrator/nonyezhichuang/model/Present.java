@@ -16,7 +16,6 @@ public class Present {
         this.iMainView = mIMainView;
     }
 
-
     public void getLogin(String mobile,String password){
         iMainView.showLoading();
         dateModel.getLogin(new ICallBack() {
@@ -39,8 +38,6 @@ public class Present {
             }
         }, mobile, password);
     }
-
-
 
     //手机注册
     public void getRegist(String mobile){
@@ -182,6 +179,79 @@ public class Present {
 
             @Override
             public void netState(String s) {
+                iMainView.showFaliure(s);
+                iMainView.cancelLoading();
+            }
+        });
+    }
+
+    //商品--商品分类
+    public void product_kind(String pid){
+        iMainView.showLoading();
+        dateModel.product_kind(pid,new ICallBack() {
+            @Override
+            public void succesed(String s) {
+                if(null==s){
+                    return;
+                }
+                iMainView.getUpDate(s);
+                iMainView.cancelLoading();
+            }
+
+            @Override
+            public void failed(String s) {
+                if(null==s){
+                    return;
+                }
+                iMainView.showFaliure(s);
+                iMainView.cancelLoading();
+            }
+
+            @Override
+            public void netState(String s) {
+                if(null==s){
+                    return;
+                }
+                iMainView.showFaliure(s);
+                iMainView.cancelLoading();
+            }
+        });
+    }
+
+
+    //商品--商品列表
+    public void product_list(String classOneId,
+                             String classId,
+                             String state,
+                             String orderBy,
+                             String lng,
+                             String lat,
+                             String storeId){
+        iMainView.showLoading();
+        dateModel.product_list(classOneId,classId,state,orderBy,lng,lat,storeId,new ICallBack() {
+            @Override
+            public void succesed(String s) {
+                if(null==s){
+                    return;
+                }
+                iMainView.getUpDate(s);
+                iMainView.cancelLoading();
+            }
+
+            @Override
+            public void failed(String s) {
+                if(null==s){
+                    return;
+                }
+                iMainView.showFaliure(s);
+                iMainView.cancelLoading();
+            }
+
+            @Override
+            public void netState(String s) {
+                if(null==s){
+                    return;
+                }
                 iMainView.showFaliure(s);
                 iMainView.cancelLoading();
             }

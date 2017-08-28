@@ -1,10 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:text="我的 "
+    <Button
+        android:text="消息"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/mBtn_xiaoxi" />
+
+    <Button
+        android:text="设置"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mBtn_shezhi"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+         />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@mipmap/home_bendigongyingshang"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/mImg_touxiang" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:text="我的订单"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_below="@id/mImg_touxiang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:id="@+id/textView4" />
+
+    <Button
+        android:text="查看更多订单"
+        android:layout_alignTop="@id/textView4"
+        android:layout_alignBottom="@id/textView4"
+        android:background="@null"
+        android:layout_below="@id/mImg_touxiang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/button16" />
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/ll_fukuan"
+        android:layout_below="@id/textView4"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="待付款"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_daifukuan" />
+        <Button
+            android:text="待发货"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_daifahuo" />
+        <Button
+            android:text="待收款"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_daishoukuan" />
+        <Button
+            android:text="待评价"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_daipingjia" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:text="常用工具"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_fukuan"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp"
+        android:id="@+id/textView3" />
+
+    <LinearLayout
+        android:layout_below="@id/textView3"
+        android:id="@+id/ll_gongju"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="商品收藏"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_shangpinshoucang" />
+        <Button
+            android:text="关注供应商"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_guanzhu" />
+        <Button
+            android:text="购买商品"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button11" />
+        <Button
+            android:text="购买店铺"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button12" />
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ll_kefu"
+        android:layout_below="@id/ll_gongju"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="常见问题"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_changjianwenti" />
+
+        <Button
+            android:text="客服电话"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_kefudianhua" />
+
+        <Button
+            android:text="投诉举报"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_jubao" />
+
+        <Button
+            android:text="投诉举报"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:id="@+id/mBtn_null" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>
