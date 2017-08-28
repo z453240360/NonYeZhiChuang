@@ -1,25 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
-    <q.rorbin.verticaltablayout.VerticalTabLayout
+    <LinearLayout
+        android:id="@+id/ll_total"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/mBtn_shucaishuiguo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="蔬菜水果" />
+
+            <Button
+                android:id="@+id/mBtn_rouqindanlei"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="肉禽蛋类" />
+
+            <Button
+                android:id="@+id/mBtn_liangyoufushi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="粮油副食" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/mBtn_shuichanhaixian"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="水产海鲜" />
+
+            <Button
+                android:id="@+id/mBtn_jiushuiyinliao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="酒水饮料" />
+
+            <Button
+                android:id="@+id/mBtn_tiaoweipin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="调味品" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/mBtn_lengdonglengcang"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="冷冻冷藏" />
+
+            <Button
+                android:id="@+id/mBtn_tingchuyongpin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="厅厨用品" />
+
+            <Button
+                android:id="@+id/mBtn_jingkoushangpin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="进口商品" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/ll_total"
         android:id="@+id/tablayout"
         android:layout_width="100dp"
         android:layout_height="match_parent"
         android:background="#EDEDED"
-        app:indicator_color="#FFFFFF"
-        app:indicator_gravity="fill"
-        app:tab_height="50dp"
-        app:tab_mode="scrollable" />
+        />
 
-    <FrameLayout
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_below="@id/ll_total"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/tablayout"
         android:id="@+id/frame"
-        android:background="#8b8b8b"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"
+        />
 
 
-</LinearLayout>
+</RelativeLayout>

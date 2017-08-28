@@ -65,4 +65,22 @@ public interface IService {
     @GET(Constant.product_message)
     Call<ResponseBody> product_message(@Path("id") String id);
 
+    //商品--商品分类
+    @GET(Constant.product_kind)
+    Call<ResponseBody> product_kind(@Query("pid")String pid);
+
+    //商品--商品列表
+    @GET(Constant.product_list)
+    Call<ResponseBody> product_list(@Query("classOneId")String classOneId,
+                                    @Query("classId")String classId,
+                                    @Query("state")String state,
+                                    @Query("orderBy")String orderBy,
+                                    @Query("lng")String lng,
+                                    @Query("lat")String lat,
+                                    @Query("storeId")String storeId);
+
+
+
+
+
 }

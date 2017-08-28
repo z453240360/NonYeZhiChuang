@@ -46,4 +46,6 @@ dependencies {
     //垂直排布的tablayout     //https://github.com/qstumn/VerticalTabLayout
     compile 'q.rorbin:VerticalTabLayout:1.2.5'
     compile 'org.greenrobot:eventbus:3.0.0'
+    //百分比布局
+    compile 'com.android.support:percent:22.2.0'
 }

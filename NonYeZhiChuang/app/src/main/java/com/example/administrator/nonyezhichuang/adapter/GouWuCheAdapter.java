@@ -82,7 +82,6 @@ public class GouWuCheAdapter extends RecyclerView.Adapter<GouWuCheAdapter.MyHold
         CheckBox checkbox;
         ImageView mImg_gouwuche;
         Button mBtn_jia, mBtn_jian;
-
         TextView mTxt_shuliang;
 
         public MyHolder(View itemView) {
@@ -91,6 +90,7 @@ public class GouWuCheAdapter extends RecyclerView.Adapter<GouWuCheAdapter.MyHold
             mBtn_jia = (Button) itemView.findViewById(R.id.mBtn_jia);
             mBtn_jian = (Button) itemView.findViewById(R.id.mBtn_jian);
             mTxt_shuliang = (TextView) itemView.findViewById(R.id.mTxt_shuliang);
+
         }
     }
 
@@ -123,6 +123,7 @@ public class GouWuCheAdapter extends RecyclerView.Adapter<GouWuCheAdapter.MyHold
      */
     public interface OnItemClickListener {
         void onItemClick(int pos, View view);
+        void onBtn_jia(int pos,View view);
     }
 
     private ZhuYe_DongTaiAdapter.OnItemClickListener mListener;

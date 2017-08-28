@@ -10,6 +10,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 /**
  * Created by Administrator on 2017/8/3.
@@ -200,9 +202,6 @@ public class DateModel {
 
     }
 
-
-
-
     //商品--商品详情
     public void product_message(String classId,final ICallBack callBack){
         Retrofit retrofit = new Retrofit.Builder()
@@ -224,6 +223,84 @@ public class DateModel {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 callBack.failed("网络请求失败"+t.toString());
+            }
+        });
+
+    }
+
+    // 商品--商品分类
+    public void product_kind(String pid,final ICallBack callBack) {
+        IService iService = getCall();
+        //IService对应的方法
+        Call<ResponseBody> call = iService.product_kind(pid);
+        //同步请求网络
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.code() != 200) {
+                    callBack.netState("服务器异常");
+                    return;
+                }
+
+                String responseBody = null;
+
+                try {
+                    responseBody = response.body().string();
+                    if (null == responseBody) {
+                        callBack.netState("数据为空");
+                        return;
+                    }
+                    callBack.succesed(responseBody);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBack.failed(t.toString());
+            }
+        });
+
+    }
+
+    // 商品--商品列表
+    public void product_list(String classOneId,
+                             String classId,
+                             String state,
+                             String orderBy,
+                             String lng,
+                             String lat,
+                             String storeId,final ICallBack callBack) {
+        IService iService = getCall();
+        //IService对应的方法
+        Call<ResponseBody> call = iService.product_list(classOneId,classId,state,orderBy,lng,lat,storeId);
+        //同步请求网络
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.code() != 200) {
+                    callBack.netState("服务器异常");
+                    return;
+                }
+
+                String responseBody = null;
+
+                try {
+                    responseBody = response.body().string();
+                    if (null == responseBody) {
+                        callBack.netState("数据为空");
+                        return;
+                    }
+                    callBack.succesed(responseBody);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBack.failed(t.toString());
             }
         });
 
