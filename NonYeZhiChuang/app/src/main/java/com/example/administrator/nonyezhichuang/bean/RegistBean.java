@@ -43,6 +43,7 @@ public class RegistBean {
     }
 
     public static class DataBean {
+
         /**
          * token : c184be7cb57f12cea55bcff1afccad6c
          */

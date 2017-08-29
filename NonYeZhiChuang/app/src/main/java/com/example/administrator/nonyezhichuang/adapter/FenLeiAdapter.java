@@ -51,7 +51,6 @@ public class FenLeiAdapter extends RecyclerView.Adapter<FenLeiAdapter.MyHolder>{
             }
         });
         holder.fenlei.setText(mDatas.get(position));
-
     }
 
     @Override
