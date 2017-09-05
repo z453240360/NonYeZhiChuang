@@ -62,7 +62,6 @@ public abstract class BaseActivity extends AppCompatActivity implements IMainVie
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
     }
 
-
     /** 是否沉浸状态栏 **/
     private boolean isSetStatusBar = true;
     /**
