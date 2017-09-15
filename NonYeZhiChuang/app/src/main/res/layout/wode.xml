@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_gravity="center"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/wedget_img1"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:text="按钮"
+        android:id="@+id/wedget_text1"
+        android:layout_below="@id/wedget_img1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:background="@color/colorAccent"
+        android:layout_alignRight="@id/wedget_img1"
+        android:layout_alignTop="@id/wedget_img1"
+        android:id="@+id/wedget_text2"
+        android:layout_marginTop="5dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="按钮"
+        android:layout_below="@id/wedget_img1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:background="@null"
+        android:id="@+id/wedget_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</RelativeLayout>

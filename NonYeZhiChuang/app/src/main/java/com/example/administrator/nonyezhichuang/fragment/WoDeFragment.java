@@ -1,5 +1,7 @@
 package com.example.administrator.nonyezhichuang.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.administrator.nonyezhichuang.R;
+import com.example.administrator.nonyezhichuang.model.IMainView;
+import com.example.administrator.nonyezhichuang.model.Present;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +25,7 @@ import butterknife.Unbinder;
  * Created by Administrator on 2017/8/18.
  */
 
-public class WoDeFragment extends Fragment {
+public class WoDeFragment extends Fragment implements IMainView{
 
     @BindView(R.id.mBtn_xiaoxi)
     Button mBtnXiaoxi;
@@ -61,6 +65,10 @@ public class WoDeFragment extends Fragment {
     Button mBtnNull;
     Unbinder unbinder;
 
+    private Present present;
+    private SharedPreferences sharedPreferences;
+    private String token;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -72,6 +80,10 @@ public class WoDeFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        present=new Present(this);
+        sharedPreferences=getActivity().getSharedPreferences("youlai", Context.MODE_PRIVATE);
+        token = sharedPreferences.getString("token", "");
+
     }
 
     @Override
@@ -83,42 +95,90 @@ public class WoDeFragment extends Fragment {
     @OnClick({R.id.mBtn_xiaoxi, R.id.mBtn_shezhi, R.id.mImg_touxiang, R.id.textView4, R.id.button16, R.id.mBtn_daifukuan, R.id.mBtn_daifahuo, R.id.mBtn_daishoukuan, R.id.mBtn_daipingjia, R.id.textView3, R.id.mBtn_shangpinshoucang, R.id.mBtn_guanzhu, R.id.button11, R.id.button12, R.id.mBtn_changjianwenti, R.id.mBtn_kefudianhua, R.id.mBtn_jubao, R.id.mBtn_null})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            //消息
             case R.id.mBtn_xiaoxi:
                 break;
+            //设置
             case R.id.mBtn_shezhi:
                 break;
+            //头像
             case R.id.mImg_touxiang:
                 break;
+            //我的订单
             case R.id.textView4:
                 break;
+            //查看更多订单
             case R.id.button16:
                 break;
+            //代付款
             case R.id.mBtn_daifukuan:
                 break;
+            //待发货
             case R.id.mBtn_daifahuo:
                 break;
+            //待收款
             case R.id.mBtn_daishoukuan:
                 break;
+            //待评价
             case R.id.mBtn_daipingjia:
                 break;
+            //常用工具
             case R.id.textView3:
                 break;
+            //商品收藏
             case R.id.mBtn_shangpinshoucang:
                 break;
+            //关注
             case R.id.mBtn_guanzhu:
                 break;
+            //购买商品
             case R.id.button11:
                 break;
+            //购买店铺
             case R.id.button12:
                 break;
+            //常见问题
             case R.id.mBtn_changjianwenti:
                 break;
+            //客服电话
             case R.id.mBtn_kefudianhua:
                 break;
+            //举报
             case R.id.mBtn_jubao:
                 break;
+            //智能采购
             case R.id.mBtn_null:
                 break;
         }
+    }
+
+    @Override
+    public void getCode(String s) {
+
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void cancelLoading() {
+
+    }
+
+    @Override
+    public void showFaliure(String s) {
+
+    }
+
+    @Override
+    public void getLogin(String s) {
+
+    }
+
+    @Override
+    public void getUpDate(String s) {
+
     }
 }
