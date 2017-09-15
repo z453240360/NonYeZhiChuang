@@ -48,4 +48,5 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     //百分比布局
     compile 'com.android.support:percent:22.2.0'
+    compile files('libs/AMap_Location_V3.5.0_20170731.jar')
 }

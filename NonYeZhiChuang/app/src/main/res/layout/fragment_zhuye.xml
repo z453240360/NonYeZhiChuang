@@ -15,6 +15,7 @@
             android:layout_height="200dp" />
 
         <LinearLayout
+            android:background="#fff"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
@@ -82,6 +83,7 @@
 
 
         <RelativeLayout
+            android:background="#fff"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:layout_below="@id/ll_total"
@@ -173,6 +175,7 @@
             />
 
         <android.support.v7.widget.RecyclerView
+            android:background="#fff"
             android:layout_marginTop="10dp"
             android:id="@+id/banner_total2"
             android:layout_marginLeft="10dp"
@@ -199,6 +202,7 @@
 
 
         <android.support.v7.widget.RecyclerView
+            android:background="#fff"
             android:layout_marginLeft="5dp"
             android:layout_centerHorizontal="true"
             android:layout_marginRight="5dp"
@@ -209,10 +213,12 @@
             android:layout_below="@id/presell" />
 
         <TextView
+            android:layout_marginTop="20dp"
             android:id="@+id/bestsell"
             android:layout_centerHorizontal="true"
             android:drawableTop="@mipmap/home_xinwen"
             android:text="实时更新，最新咨询"
+            android:layout_marginBottom="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/mRecyclerView_presell"
@@ -229,6 +235,8 @@
             android:text="更多" />
 
         <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:background="#fff"
+
             android:id="@+id/mRecyclerView_bestsell"
             android:layout_width="match_parent"
             android:layout_height="300dp"
@@ -254,6 +262,7 @@
             android:text="更多" />
 
         <com.jcodecraeer.xrecyclerview.XRecyclerView
+
             android:visibility="gone"
             android:id="@+id/mRecyclerView_newProdect"
             android:layout_width="match_parent"

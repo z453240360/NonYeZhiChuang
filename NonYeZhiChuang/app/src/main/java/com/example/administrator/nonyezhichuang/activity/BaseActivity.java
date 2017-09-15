@@ -59,7 +59,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IMainVie
      * @param msg
      */
     protected void showToast(String msg){
-        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
     }
 
 

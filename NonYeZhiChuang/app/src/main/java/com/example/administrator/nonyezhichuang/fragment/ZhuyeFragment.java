@@ -136,6 +136,7 @@ public class ZhuyeFragment extends Fragment implements IMainView {
          */
         adapter_dongtai = new ZhuYe_DongTaiAdapter(DongTaiList2,getActivity());
         manager_dongtai = new LinearLayoutManager(getActivity());
+
         mRecyclerViewBestsell.setLayoutManager(manager_dongtai);
         mRecyclerViewBestsell.setAdapter(adapter_dongtai);
         mRecyclerViewBestsell.setRefreshProgressStyle(ProgressStyle.BallBeat);

@@ -30,6 +30,7 @@ public class MyScrollView extends ScrollView {
     public void setScrollViewListener(ScrollViewListener scrollViewListener) {
         this.scrollViewListener = scrollViewListener;
     }
+
     @Override
     protected void onScrollChanged(int l, int t, int oldx, int oldy) {
         super.onScrollChanged(l, t, oldx, oldy);

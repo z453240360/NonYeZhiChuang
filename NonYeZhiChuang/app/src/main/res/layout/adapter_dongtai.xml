@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="100dp">
+                android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/iv_show"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:scaleType="fitXY"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:layout_margin="5dp"
         android:src="@mipmap/ic_launcher"
         />
@@ -31,7 +31,7 @@
         android:id="@+id/seeNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@id/iv_show"
         android:layout_alignLeft="@id/tv_title"
         android:layout_margin="5dp"
         android:lines="1"

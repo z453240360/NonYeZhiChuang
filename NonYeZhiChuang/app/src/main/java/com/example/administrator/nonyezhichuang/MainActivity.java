@@ -2,6 +2,7 @@ package com.example.administrator.nonyezhichuang;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,37 +46,48 @@ public class MainActivity extends AppCompatActivity implements IMainView ,Scroll
     private MyScrollView activity_main;
     private Toolbar toolbar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
-        present = new Present(this);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.BLACK);
+            supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+            setContentView(R.layout.activity_main);
+
+
+            present = new Present(this);
 //        present.getLogin("18912367774", "0000000"); //登陆接口
 
-        txt = (TextView) findViewById(R.id.txt);
+            txt = (TextView) findViewById(R.id.txt);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+            toolbar = (Toolbar) findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
+            toolbar.setNavigationIcon(R.mipmap.ic_launcher);
 
-        activity_main = (MyScrollView) findViewById(R.id.sc);
-        activity_main.setScrollViewListener(new ScrollViewListener() {
-            @Override
-            public void onScrollChanged(MyScrollView scrollView, int x, int y, int oldx, int oldy) {
-                if (oldy>250){
-                    toolbar.setBackgroundColor(Color.RED);
-                }else {
-                    toolbar.setBackgroundColor(Color.BLUE);
-                    getSupportActionBar().show();
+            activity_main = (MyScrollView) findViewById(R.id.sc);
+            activity_main.setScrollViewListener(new ScrollViewListener() {
+                @Override
+                public void onScrollChanged(MyScrollView scrollView, int x, int y, int oldx, int oldy) {
+                    if (oldy > 250) {
+                        toolbar.setBackgroundColor(Color.RED);
+                    } else {
+                        toolbar.setBackgroundColor(Color.BLUE);
+                        getSupportActionBar().show();
+                    }
                 }
-            }
-        });
+            });
 
 
-
-
+        }
     }
 
 
