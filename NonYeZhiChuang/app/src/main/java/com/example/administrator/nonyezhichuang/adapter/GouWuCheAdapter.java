@@ -90,7 +90,6 @@ public class GouWuCheAdapter extends RecyclerView.Adapter<GouWuCheAdapter.MyHold
             mBtn_jia = (Button) itemView.findViewById(R.id.mBtn_jia);
             mBtn_jian = (Button) itemView.findViewById(R.id.mBtn_jian);
             mTxt_shuliang = (TextView) itemView.findViewById(R.id.mTxt_shuliang);
-
         }
     }
 

@@ -34,6 +34,7 @@ public class Button_gouwuche extends FrameLayout {
         initView(context);
     }
 
+
     public void initView(Context context){
         View view = LayoutInflater.from(context).inflate(R.layout.wedget_gouwuche, null);
         addView(view);

@@ -236,7 +236,6 @@
 
         <com.jcodecraeer.xrecyclerview.XRecyclerView
             android:background="#fff"
-
             android:id="@+id/mRecyclerView_bestsell"
             android:layout_width="match_parent"
             android:layout_height="300dp"
